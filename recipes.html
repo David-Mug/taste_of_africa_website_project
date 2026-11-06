@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>African Recipes | Taste of Africa</title>
+  <meta name="description" content="Explore complete African recipes including Nigerian jollof rice, Rwandan isombe, Moroccan tagine, Ethiopian injera and South African bunny chow.">
+  <meta name="theme-color" content="#162A22">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Site header: the same on every page -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Taste of Africa home">
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="15" r="9" fill="#BB8130"/><path d="M4 20h32a16 16 0 0 1-32 0Z" fill="#7B3311"/><path d="M4 20h32" stroke="#162A22" stroke-width="2"/></svg>
+        <span>Taste of Africa</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li><a class="site-nav__link" href="recipes.html" aria-current="page">Recipes</a></li>
+          <li><a class="site-nav__link" href="regions.html">Culinary Regions</a></li>
+          <li><a class="site-nav__link" href="about.html">About Us</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <img src="images/page-recipes-spices.jpg" alt="Cones of colorful ground spices below shelves of spice jars at a shop in Morocco" width="1920" height="1440" class="page-hero__image" fetchpriority="high">
+      <div class="container page-hero__content">
+        <p class="eyebrow">The recipe collection</p>
+        <h1 id="page-title">Explore African Recipes.</h1>
+        <p>Traditional dishes from across the continent, each with its story, its method and a serving scaler for your table.</p>
+      </div>
+    </section>
+
+    <!-- Filter controls: the JavaScript reads each button's data-filter value -->
+    <div class="filter-bar">
+      <div class="container filter-bar__inner">
+        <div class="filter-group" role="group" aria-label="Filter recipes">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All Recipes</button>
+          <button class="filter-btn" type="button" data-filter="west-africa" aria-pressed="false">West Africa</button>
+          <button class="filter-btn" type="button" data-filter="east-africa" aria-pressed="false">East Africa</button>
+          <button class="filter-btn" type="button" data-filter="north-africa" aria-pressed="false">North Africa</button>
+          <button class="filter-btn" type="button" data-filter="southern-africa" aria-pressed="false">Southern Africa</button>
+          <button class="filter-btn" type="button" data-filter="favorites" aria-pressed="false">My Favorites <span id="favorites-count">(0)</span></button>
+        </div>
+        <p class="results-count" id="results-count" role="status" aria-live="polite">Showing 5 recipes</p>
+      </div>
+    </div>
+
+    <section class="section" aria-label="Recipe results">
+      <div class="container">
+        <div class="recipe-list">
+
+          <!-- Nigerian Jollof Rice -->
+          <article class="recipe-card" id="jollof-rice" data-region="west-africa" data-recipe-id="jollof-rice" aria-labelledby="jollof-rice-title">
+            <figure class="recipe-card__media">
+              <img src="images/jollof-rice.jpg" alt="A mound of orange-red jollof rice surrounded by golden slices of fried plantain on a white plate" width="1024" height="681" loading="lazy">
+              <span class="badge">West Africa</span>
+              <figcaption>Jollof rice served with dodo, the fried plantain that often accompanies it.</figcaption>
+            </figure>
+
+            <div class="recipe-card__intro">
+              <p class="eyebrow">Nigeria &middot; West Africa</p>
+              <div class="recipe-card__title-row">
+                <h2 id="jollof-rice-title">Nigerian Jollof Rice</h2>
+                <button class="favorite-btn" type="button" data-recipe-id="jollof-rice" aria-label="Favorite Nigerian Jollof Rice" aria-pressed="false">♡ Favorite</button>
+              </div>
+              <p class="recipe-card__background">Jollof takes its name from the Wolof people of the Senegambia region, whose rice dishes are widely regarded as its ancestor. It has since become a shared staple across West Africa, and Nigeria, Ghana and Senegal each cook it their own way, which fuels a good-natured rivalry over whose is best. In Nigeria it is the centerpiece of celebrations, and "party jollof", cooked in huge pots over firewood, is prized for its smoky flavor.</p>
+              <dl class="recipe-facts">
+                <div><dt>Prep</dt><dd>20 min</dd></div>
+                <div><dt>Cook</dt><dd>1 hr</dd></div>
+                <div><dt>Difficulty</dt><dd>Medium</dd></div>
+                <div><dt>Serves</dt><dd>6</dd></div>
+              </dl>
+            </div>
+
+            <section class="ingredients-panel" aria-label="Ingredients for Nigerian Jollof Rice">
+              <div class="ingredients-panel__header">
+                <h3>Ingredients</h3>
+                <div class="scaler" data-default-servings="6" role="group" aria-label="Adjust servings for Nigerian Jollof Rice">
+                  <button class="scaler__btn" type="button" data-action="decrease" aria-label="Decrease servings">&minus;</button>
+                  <span class="scaler__value" aria-live="polite"><span class="scaler__count">6</span> <span class="scaler__label">servings</span></span>
+                  <button class="scaler__btn" type="button" data-action="increase" aria-label="Increase servings">+</button>
+                </div>
+              </div>
+              <ul class="ingredient-list">
+                <li class="ingredient" data-quantity="3" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">3 cups</span> <span class="ingredient__name">long-grain parboiled rice</span></li>
+                <li class="ingredient" data-quantity="4" data-unit="large tomato" data-unit-plural="large tomatoes"><span class="ingredient__amount">4 large tomatoes</span> <span class="ingredient__name">ripe, roughly chopped</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="red bell pepper" data-unit-plural="red bell peppers"><span class="ingredient__amount">2 red bell peppers</span> <span class="ingredient__name">seeded</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="Scotch bonnet pepper" data-unit-plural="Scotch bonnet peppers"><span class="ingredient__amount">1 Scotch bonnet pepper</span> <span class="ingredient__name">seeded for less heat</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="medium onion" data-unit-plural="medium onions"><span class="ingredient__amount">2 medium onions</span> <span class="ingredient__name">for blending</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="medium onion" data-unit-plural="medium onions"><span class="ingredient__amount">1 medium onion</span> <span class="ingredient__name">thinly sliced</span></li>
+                <li class="ingredient" data-quantity="0.333" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">⅓ cup</span> <span class="ingredient__name">vegetable oil</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="tbsp" data-unit-plural="tbsp"><span class="ingredient__amount">3 tbsp</span> <span class="ingredient__name">tomato paste</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">2 cups</span> <span class="ingredient__name">chicken or vegetable stock</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">2 tsp</span> <span class="ingredient__name">curry powder</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">1 tsp</span> <span class="ingredient__name">dried thyme</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="bay leaf" data-unit-plural="bay leaves"><span class="ingredient__amount">2 bay leaves</span> <span class="ingredient__name">whole</span></li>
+                <li class="ingredient"><span class="ingredient__amount">To taste</span> <span class="ingredient__name">salt</span></li>
+              </ul>
+            </section>
+
+            <div class="recipe-card__panels">
+              <details class="recipe-panel" open>
+                <summary>Cooking instructions</summary>
+                <div class="recipe-panel__body">
+                  <ol class="step-list">
+                    <li>Blend the tomatoes, red bell peppers, Scotch bonnet and the onions for blending until smooth. Pour into a saucepan and boil for 10 to 15 minutes, until reduced by about half.</li>
+                    <li>Heat the oil in a heavy-based pot over medium heat. Fry the sliced onion for 4 to 5 minutes, until soft and golden. Stir in the tomato paste and fry for 3 to 4 minutes, until it darkens.</li>
+                    <li>Add the reduced pepper mixture, curry powder, thyme, bay leaves and salt. Fry for about 10 minutes, stirring often, until the oil begins to rise to the surface.</li>
+                    <li>Rinse the rice until the water runs clear, then stir it into the sauce. Pour in the stock so that it just reaches the level of the rice.</li>
+                    <li>Cover the pot tightly, using foil under the lid if needed to trap the steam. Cook on the lowest heat for about 30 minutes, stirring once halfway. Add a splash of stock if the pot looks dry.</li>
+                    <li>For a smoky finish, raise the heat for the last 3 to 5 minutes and let the bottom of the rice catch lightly without burning. Take off the heat and rest, covered, for 5 minutes.</li>
+                    <li>Remove the bay leaves, fluff with a fork, and serve with fried plantain, grilled chicken or coleslaw.</li>
+                  </ol>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Video tutorial</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/4V_GaurkxZ8" title="How To Cook Jollof Rice To Perfection! A Guide for beginners and Pro cooks, by Joyful Cook" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <p class="embed-note">Video by Joyful Cook. Its method may differ from the recipe above. <a href="https://www.youtube.com/watch?v=4V_GaurkxZ8" target="_blank" rel="noopener noreferrer">Open on YouTube<span class="sr-only">: How To Cook Jollof Rice To Perfection! A Guide for beginners and Pro cooks</span></a></p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Nutrition facts (approximate)</summary>
+                <div class="recipe-panel__body">
+                  <table class="nutrition-table">
+                    <caption>Approximate values per serving, estimated from typical values for the listed ingredients. They are not laboratory measurements.</caption>
+                    <thead>
+                      <tr><th scope="col">Nutrient</th><th scope="col">Per serving (approx.)</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">Energy</th><td>~480 kcal</td></tr>
+                      <tr><th scope="row">Protein</th><td>~9 g</td></tr>
+                      <tr><th scope="row">Carbohydrates</th><td>~80 g</td></tr>
+                      <tr><th scope="row">Fat</th><td>~14 g</td></tr>
+                      <tr><th scope="row">Fiber</th><td>~4 g</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Where it comes from</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.google.com/maps?q=Nigeria&amp;z=5&amp;output=embed" title="Map showing Nigeria" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <p class="embed-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Nigeria" target="_blank" rel="noopener noreferrer">Open Nigeria in Google Maps</a></p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- Rwandan Isombe -->
+          <article class="recipe-card" id="isombe" data-region="east-africa" data-recipe-id="isombe" aria-labelledby="isombe-title">
+            <figure class="recipe-card__media">
+              <img src="images/isombe.jpg" alt="A deep green mound of isombe, a stew of pounded cassava leaves, served with white rice in a wooden bowl" width="1200" height="1600" loading="lazy">
+              <span class="badge">East Africa</span>
+              <figcaption>Isombe served with rice. It is also eaten with ugali, plantain or sweet potato.</figcaption>
+            </figure>
+
+            <div class="recipe-card__intro">
+              <p class="eyebrow">Rwanda &middot; East Africa</p>
+              <div class="recipe-card__title-row">
+                <h2 id="isombe-title">Rwandan Isombe</h2>
+                <button class="favorite-btn" type="button" data-recipe-id="isombe" aria-label="Favorite Rwandan Isombe" aria-pressed="false">♡ Favorite</button>
+              </div>
+              <p class="recipe-card__background">Isombe is a much-loved Rwandan home dish of pounded cassava leaves, simmered slowly with vegetables and enriched with palm oil and groundnuts. Closely related dishes are cooked in neighboring countries, including Burundi and the Democratic Republic of the Congo, where cassava leaves are known by names such as sombe and pondu. Patience is the key ingredient: the long cooking makes the leaves tender and safe to eat.</p>
+              <dl class="recipe-facts">
+                <div><dt>Prep</dt><dd>20 min</dd></div>
+                <div><dt>Cook</dt><dd>2 hr</dd></div>
+                <div><dt>Difficulty</dt><dd>Medium</dd></div>
+                <div><dt>Serves</dt><dd>4</dd></div>
+              </dl>
+            </div>
+
+            <section class="ingredients-panel" aria-label="Ingredients for Rwandan Isombe">
+              <div class="ingredients-panel__header">
+                <h3>Ingredients</h3>
+                <div class="scaler" data-default-servings="4" role="group" aria-label="Adjust servings for Rwandan Isombe">
+                  <button class="scaler__btn" type="button" data-action="decrease" aria-label="Decrease servings">&minus;</button>
+                  <span class="scaler__value" aria-live="polite"><span class="scaler__count">4</span> <span class="scaler__label">servings</span></span>
+                  <button class="scaler__btn" type="button" data-action="increase" aria-label="Increase servings">+</button>
+                </div>
+              </div>
+              <ul class="ingredient-list">
+                <li class="ingredient" data-quantity="500" data-unit="g" data-unit-plural="g"><span class="ingredient__amount">500 g</span> <span class="ingredient__name">pounded cassava leaves, fresh or frozen</span></li>
+                <li class="ingredient" data-quantity="6" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">6 cups</span> <span class="ingredient__name">water</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="medium onion" data-unit-plural="medium onions"><span class="ingredient__amount">2 medium onions</span> <span class="ingredient__name">finely chopped</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="green bell pepper" data-unit-plural="green bell peppers"><span class="ingredient__amount">1 green bell pepper</span> <span class="ingredient__name">finely chopped</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="medium eggplant" data-unit-plural="medium eggplants"><span class="ingredient__amount">1 medium eggplant</span> <span class="ingredient__name">diced</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="clove" data-unit-plural="cloves"><span class="ingredient__amount">2 cloves</span> <span class="ingredient__name">garlic, crushed</span></li>
+                <li class="ingredient" data-quantity="0.5" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">½ cup</span> <span class="ingredient__name">natural peanut butter or ground groundnuts</span></li>
+                <li class="ingredient" data-quantity="0.25" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">¼ cup</span> <span class="ingredient__name">red palm oil</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">2 cups</span> <span class="ingredient__name">chopped spinach (optional)</span></li>
+                <li class="ingredient"><span class="ingredient__amount">To taste</span> <span class="ingredient__name">salt</span></li>
+              </ul>
+            </section>
+
+            <div class="recipe-card__panels">
+              <details class="recipe-panel" open>
+                <summary>Cooking instructions</summary>
+                <div class="recipe-panel__body">
+                  <ol class="step-list">
+                    <li>Put the pounded cassava leaves and the water in a large pot. Bring to a boil, then simmer uncovered for about 1 hour, stirring from time to time and adding hot water if the pot begins to dry out.</li>
+                    <li>Add the onions, bell pepper, eggplant and garlic. Simmer for a further 30 minutes, until the vegetables are very soft.</li>
+                    <li>Loosen the peanut butter with a ladle of the hot cooking liquid until smooth, then stir it into the pot along with the palm oil.</li>
+                    <li>Simmer gently for 15 to 20 minutes, stirring often so the groundnuts do not stick, until the stew is thick and glossy.</li>
+                    <li>Stir in the spinach, if using, and cook for 5 more minutes. Season with salt and serve hot with rice, ugali, boiled plantain or sweet potato.</li>
+                  </ol>
+                  <p class="recipe-note"><strong>Food safety:</strong> raw cassava leaves contain natural compounds that can be toxic. Never eat them raw or undercooked. Pounding followed by long boiling, as described here, is essential.</p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Video tutorial</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/LCwueWa3LsQ" title="How To Cook Cassava Leaves (SOMBE), by Just Libby" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <p class="embed-note">Video by Just Libby. Its method may differ from the recipe above. <a href="https://www.youtube.com/watch?v=LCwueWa3LsQ" target="_blank" rel="noopener noreferrer">Open on YouTube<span class="sr-only">: How To Cook Cassava Leaves (SOMBE)</span></a></p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Nutrition facts (approximate)</summary>
+                <div class="recipe-panel__body">
+                  <table class="nutrition-table">
+                    <caption>Approximate values per serving, estimated from typical values for the listed ingredients. They are not laboratory measurements.</caption>
+                    <thead>
+                      <tr><th scope="col">Nutrient</th><th scope="col">Per serving (approx.)</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">Energy</th><td>~430 kcal</td></tr>
+                      <tr><th scope="row">Protein</th><td>~14 g</td></tr>
+                      <tr><th scope="row">Carbohydrates</th><td>~28 g</td></tr>
+                      <tr><th scope="row">Fat</th><td>~31 g</td></tr>
+                      <tr><th scope="row">Fiber</th><td>~9 g</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Where it comes from</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.google.com/maps?q=Rwanda&amp;z=7&amp;output=embed" title="Map showing Rwanda" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <p class="embed-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Rwanda" target="_blank" rel="noopener noreferrer">Open Rwanda in Google Maps</a></p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- Moroccan Chicken Tagine -->
+          <article class="recipe-card" id="chicken-tagine" data-region="north-africa" data-recipe-id="chicken-tagine" aria-labelledby="chicken-tagine-title">
+            <figure class="recipe-card__media">
+              <img src="images/chicken-tagine.jpg" alt="Close-up of chicken tagine in a golden sauce with strips of preserved lemon, green olives and fresh cilantro" width="1400" height="1050" loading="lazy">
+              <span class="badge">North Africa</span>
+              <figcaption>Chicken tagine with preserved lemons and olives, a Moroccan classic.</figcaption>
+            </figure>
+
+            <div class="recipe-card__intro">
+              <p class="eyebrow">Morocco &middot; North Africa</p>
+              <div class="recipe-card__title-row">
+                <h2 id="chicken-tagine-title">Moroccan Chicken Tagine</h2>
+                <button class="favorite-btn" type="button" data-recipe-id="chicken-tagine" aria-label="Favorite Moroccan Chicken Tagine" aria-pressed="false">♡ Favorite</button>
+              </div>
+              <p class="recipe-card__background">The word tagine names both the stew and the earthenware pot it cooks in. The pot's conical lid returns steam to the dish as it condenses, keeping the food moist during long, gentle cooking. Moroccan cooking draws on Amazigh (Berber) traditions along with Arab and Andalusian influences, and the pairing of chicken with preserved lemon and olives is one of its best-known combinations.</p>
+              <dl class="recipe-facts">
+                <div><dt>Prep</dt><dd>20 min</dd></div>
+                <div><dt>Cook</dt><dd>1 hr 15 min</dd></div>
+                <div><dt>Difficulty</dt><dd>Medium</dd></div>
+                <div><dt>Serves</dt><dd>4</dd></div>
+              </dl>
+            </div>
+
+            <section class="ingredients-panel" aria-label="Ingredients for Moroccan Chicken Tagine">
+              <div class="ingredients-panel__header">
+                <h3>Ingredients</h3>
+                <div class="scaler" data-default-servings="4" role="group" aria-label="Adjust servings for Moroccan Chicken Tagine">
+                  <button class="scaler__btn" type="button" data-action="decrease" aria-label="Decrease servings">&minus;</button>
+                  <span class="scaler__value" aria-live="polite"><span class="scaler__count">4</span> <span class="scaler__label">servings</span></span>
+                  <button class="scaler__btn" type="button" data-action="increase" aria-label="Increase servings">+</button>
+                </div>
+              </div>
+              <ul class="ingredient-list">
+                <li class="ingredient" data-quantity="8" data-unit="bone-in chicken thigh" data-unit-plural="bone-in chicken thighs"><span class="ingredient__amount">8 bone-in chicken thighs</span> <span class="ingredient__name">skin removed if preferred</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="large onion" data-unit-plural="large onions"><span class="ingredient__amount">2 large onions</span> <span class="ingredient__name">thinly sliced</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="clove" data-unit-plural="cloves"><span class="ingredient__amount">3 cloves</span> <span class="ingredient__name">garlic, crushed</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="tbsp" data-unit-plural="tbsp"><span class="ingredient__amount">3 tbsp</span> <span class="ingredient__name">olive oil</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">1 tsp</span> <span class="ingredient__name">ground ginger</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">1 tsp</span> <span class="ingredient__name">ground turmeric</span></li>
+                <li class="ingredient" data-quantity="0.5" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">½ tsp</span> <span class="ingredient__name">ground black pepper</span></li>
+                <li class="ingredient" data-quantity="0.25" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">¼ tsp</span> <span class="ingredient__name">saffron threads, crumbled</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">1 cup</span> <span class="ingredient__name">water</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="preserved lemon" data-unit-plural="preserved lemons"><span class="ingredient__amount">1 preserved lemon</span> <span class="ingredient__name">rind only, cut into strips</span></li>
+                <li class="ingredient" data-quantity="0.5" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">½ cup</span> <span class="ingredient__name">green olives</span></li>
+                <li class="ingredient" data-quantity="0.25" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">¼ cup</span> <span class="ingredient__name">chopped cilantro and parsley</span></li>
+                <li class="ingredient"><span class="ingredient__amount">To taste</span> <span class="ingredient__name">salt</span></li>
+              </ul>
+            </section>
+
+            <div class="recipe-card__panels">
+              <details class="recipe-panel" open>
+                <summary>Cooking instructions</summary>
+                <div class="recipe-panel__body">
+                  <ol class="step-list">
+                    <li>Mix the garlic, olive oil, ginger, turmeric, pepper and a little salt in a large bowl. Coat the chicken well. If you have time, cover and refrigerate for 1 hour.</li>
+                    <li>Spread the onions over the base of a tagine or heavy pot. Arrange the chicken on top and scatter over the saffron. If using a clay tagine, place a heat diffuser under it and keep the heat low.</li>
+                    <li>Pour in the water, cover, and cook over low to medium-low heat for 45 to 60 minutes, turning the chicken once, until it is very tender.</li>
+                    <li>Add the preserved lemon and olives and cook, covered, for 15 minutes more.</li>
+                    <li>If the sauce is thin, remove the lid for the last few minutes to reduce it. Taste before adding salt, because preserved lemons and olives are already salty.</li>
+                    <li>Scatter over the cilantro and parsley and serve from the pot with warm Moroccan bread for scooping up the sauce.</li>
+                  </ol>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Video tutorial</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/WJ2DXmkzw3w" title="How to make the best moroccan chicken tagine, by Chef Nad" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <p class="embed-note">Video by Chef Nad. Its method may differ from the recipe above. <a href="https://www.youtube.com/watch?v=WJ2DXmkzw3w" target="_blank" rel="noopener noreferrer">Open on YouTube<span class="sr-only">: How to make the best moroccan chicken tagine</span></a></p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Nutrition facts (approximate)</summary>
+                <div class="recipe-panel__body">
+                  <table class="nutrition-table">
+                    <caption>Approximate values per serving, estimated from typical values for the listed ingredients. They are not laboratory measurements.</caption>
+                    <thead>
+                      <tr><th scope="col">Nutrient</th><th scope="col">Per serving (approx.)</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">Energy</th><td>~520 kcal</td></tr>
+                      <tr><th scope="row">Protein</th><td>~40 g</td></tr>
+                      <tr><th scope="row">Carbohydrates</th><td>~11 g</td></tr>
+                      <tr><th scope="row">Fat</th><td>~35 g</td></tr>
+                      <tr><th scope="row">Fiber</th><td>~3 g</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Where it comes from</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.google.com/maps?q=Morocco&amp;z=5&amp;output=embed" title="Map showing Morocco" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <p class="embed-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Morocco" target="_blank" rel="noopener noreferrer">Open Morocco in Google Maps</a></p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- Ethiopian Injera -->
+          <article class="recipe-card" id="injera" data-region="east-africa" data-recipe-id="injera" aria-labelledby="injera-title">
+            <figure class="recipe-card__media">
+              <img src="images/injera.jpg" alt="Large round injera flatbreads with a spongy, bubbled surface, stacked on a woven basket" width="1400" height="934" loading="lazy">
+              <span class="badge">East Africa</span>
+              <figcaption>Injera, showing the tiny surface holes that soak up stews.</figcaption>
+            </figure>
+
+            <div class="recipe-card__intro">
+              <p class="eyebrow">Ethiopia &middot; East Africa</p>
+              <div class="recipe-card__title-row">
+                <h2 id="injera-title">Ethiopian Injera</h2>
+                <button class="favorite-btn" type="button" data-recipe-id="injera" aria-label="Favorite Ethiopian Injera" aria-pressed="false">♡ Favorite</button>
+              </div>
+              <p class="recipe-card__background">Injera is the spongy, gently sour flatbread at the heart of Ethiopian and Eritrean meals. It is traditionally made from teff, a tiny grain native to the region, and its flavor comes from a natural fermentation lasting several days. Injera is plate, utensil and food at once: stews are spooned on top, and diners tear off pieces to scoop them up. Sharing one platter is central to the meal, and gursha, placing a morsel in another person's mouth, is a gesture of friendship and respect.</p>
+              <dl class="recipe-facts">
+                <div><dt>Prep</dt><dd>15 min + 2 to 3 days fermenting</dd></div>
+                <div><dt>Cook</dt><dd>30 min</dd></div>
+                <div><dt>Difficulty</dt><dd>Advanced</dd></div>
+                <div><dt>Serves</dt><dd>4</dd></div>
+              </dl>
+            </div>
+
+            <section class="ingredients-panel" aria-label="Ingredients for Ethiopian Injera">
+              <div class="ingredients-panel__header">
+                <h3>Ingredients</h3>
+                <div class="scaler" data-default-servings="4" role="group" aria-label="Adjust servings for Ethiopian Injera">
+                  <button class="scaler__btn" type="button" data-action="decrease" aria-label="Decrease servings">&minus;</button>
+                  <span class="scaler__value" aria-live="polite"><span class="scaler__count">4</span> <span class="scaler__label">servings</span></span>
+                  <button class="scaler__btn" type="button" data-action="increase" aria-label="Increase servings">+</button>
+                </div>
+              </div>
+              <ul class="ingredient-list">
+                <li class="ingredient" data-quantity="3" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">3 cups</span> <span class="ingredient__name">teff flour</span></li>
+                <li class="ingredient" data-quantity="4.5" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">4½ cups</span> <span class="ingredient__name">lukewarm filtered water</span></li>
+                <li class="ingredient" data-quantity="0.5" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">½ tsp</span> <span class="ingredient__name">salt</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">1 tsp</span> <span class="ingredient__name">oil, for wiping the pan</span></li>
+              </ul>
+            </section>
+
+            <div class="recipe-card__panels">
+              <details class="recipe-panel" open>
+                <summary>Cooking instructions</summary>
+                <div class="recipe-panel__body">
+                  <ol class="step-list">
+                    <li>In a large glass or ceramic bowl, whisk the teff flour and lukewarm water into a smooth batter. Cover loosely with a clean cloth.</li>
+                    <li>Leave at room temperature for 2 to 3 days, until bubbly with a pleasantly sour smell. Discard the batter and start again if you see any mold.</li>
+                    <li>Carefully pour off any dark liquid that has collected on top. Stir in the salt, then add a little water if needed until the batter is about as thin as crepe batter.</li>
+                    <li>Heat a large non-stick skillet with a lid over medium-high heat and wipe it lightly with oil.</li>
+                    <li>Pour in a ladle of batter in a spiral, starting from the outside and working inward, then tilt the pan to fill any gaps.</li>
+                    <li>Cook without flipping until small holes, known as "eyes", cover the surface. Cover with the lid for about 1 minute, until the top is set and the edges lift away.</li>
+                    <li>Slide onto a clean cloth and let each injera cool before stacking so they do not stick. Repeat with the remaining batter, making about 8 in total.</li>
+                  </ol>
+                  <p class="recipe-note"><strong>Good to know:</strong> Injera takes practice, and results depend on your flour and room temperature. Expect the first one or two to be test pieces. Traditional cooks use a large round griddle called a mitad.</p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Video tutorial</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/NwVSl3FQt78" title="How to Make Injera (Ethiopian Flatbread) Mulu's Way!, by Mulu Cooks" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <p class="embed-note">Video by Mulu Cooks. Its method may differ from the recipe above. <a href="https://www.youtube.com/watch?v=NwVSl3FQt78" target="_blank" rel="noopener noreferrer">Open on YouTube<span class="sr-only">: How to Make Injera (Ethiopian Flatbread) Mulu's Way!</span></a></p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Nutrition facts (approximate)</summary>
+                <div class="recipe-panel__body">
+                  <table class="nutrition-table">
+                    <caption>Approximate values per serving, estimated from typical values for the listed ingredients. They are not laboratory measurements.</caption>
+                    <thead>
+                      <tr><th scope="col">Nutrient</th><th scope="col">Per serving (approx.)</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">Energy</th><td>~440 kcal</td></tr>
+                      <tr><th scope="row">Protein</th><td>~16 g</td></tr>
+                      <tr><th scope="row">Carbohydrates</th><td>~85 g</td></tr>
+                      <tr><th scope="row">Fat</th><td>~4 g</td></tr>
+                      <tr><th scope="row">Fiber</th><td>~9 g</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Where it comes from</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.google.com/maps?q=Ethiopia&amp;z=5&amp;output=embed" title="Map showing Ethiopia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <p class="embed-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ethiopia" target="_blank" rel="noopener noreferrer">Open Ethiopia in Google Maps</a></p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- South African Bunny Chow -->
+          <article class="recipe-card" id="bunny-chow" data-region="southern-africa" data-recipe-id="bunny-chow" aria-labelledby="bunny-chow-title">
+            <figure class="recipe-card__media">
+              <img src="images/bunny-chow.jpg" alt="A hollowed-out quarter loaf of white bread filled with lamb and potato curry, served with grated carrot and chopped onion on a blue plate" width="1400" height="1050" loading="lazy">
+              <span class="badge">Southern Africa</span>
+              <figcaption>A bunny chow with lamb and potato curry and a fresh carrot sambal.</figcaption>
+            </figure>
+
+            <div class="recipe-card__intro">
+              <p class="eyebrow">South Africa &middot; Southern Africa</p>
+              <div class="recipe-card__title-row">
+                <h2 id="bunny-chow-title">South African Bunny Chow</h2>
+                <button class="favorite-btn" type="button" data-recipe-id="bunny-chow" aria-label="Favorite South African Bunny Chow" aria-pressed="false">♡ Favorite</button>
+              </div>
+              <p class="recipe-card__background">Bunny chow is a hollowed-out loaf of white bread filled with curry, and it contains no rabbit. It was created in Durban by the city's Indian South African community, whose ancestors came to the region largely as indentured laborers from the 1860s onward. Its exact origin is debated, though it is commonly traced to the 1940s. The bread made a portable, self-contained meal, and it is still eaten by hand, using the scooped-out bread to mop up the curry.</p>
+              <dl class="recipe-facts">
+                <div><dt>Prep</dt><dd>20 min</dd></div>
+                <div><dt>Cook</dt><dd>1 hr 30 min</dd></div>
+                <div><dt>Difficulty</dt><dd>Medium</dd></div>
+                <div><dt>Serves</dt><dd>4</dd></div>
+              </dl>
+            </div>
+
+            <section class="ingredients-panel" aria-label="Ingredients for South African Bunny Chow">
+              <div class="ingredients-panel__header">
+                <h3>Ingredients</h3>
+                <div class="scaler" data-default-servings="4" role="group" aria-label="Adjust servings for South African Bunny Chow">
+                  <button class="scaler__btn" type="button" data-action="decrease" aria-label="Decrease servings">&minus;</button>
+                  <span class="scaler__value" aria-live="polite"><span class="scaler__count">4</span> <span class="scaler__label">servings</span></span>
+                  <button class="scaler__btn" type="button" data-action="increase" aria-label="Increase servings">+</button>
+                </div>
+              </div>
+              <ul class="ingredient-list">
+                <li class="ingredient" data-quantity="800" data-unit="g" data-unit-plural="g"><span class="ingredient__amount">800 g</span> <span class="ingredient__name">lamb or mutton shoulder, cubed</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="medium potato" data-unit-plural="medium potatoes"><span class="ingredient__amount">3 medium potatoes</span> <span class="ingredient__name">peeled and quartered</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="medium onion" data-unit-plural="medium onions"><span class="ingredient__amount">2 medium onions</span> <span class="ingredient__name">finely chopped</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="medium tomato" data-unit-plural="medium tomatoes"><span class="ingredient__amount">2 medium tomatoes</span> <span class="ingredient__name">chopped</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="clove" data-unit-plural="cloves"><span class="ingredient__amount">3 cloves</span> <span class="ingredient__name">garlic, crushed</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tbsp" data-unit-plural="tbsp"><span class="ingredient__amount">1 tbsp</span> <span class="ingredient__name">fresh ginger, grated</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="tbsp" data-unit-plural="tbsp"><span class="ingredient__amount">3 tbsp</span> <span class="ingredient__name">vegetable oil</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="tbsp" data-unit-plural="tbsp"><span class="ingredient__amount">3 tbsp</span> <span class="ingredient__name">Durban masala or hot curry powder</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">1 tsp</span> <span class="ingredient__name">ground turmeric</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="tsp" data-unit-plural="tsp"><span class="ingredient__amount">1 tsp</span> <span class="ingredient__name">ground cumin</span></li>
+                <li class="ingredient" data-quantity="1" data-unit="cinnamon stick" data-unit-plural="cinnamon sticks"><span class="ingredient__amount">1 cinnamon stick</span> <span class="ingredient__name">whole</span></li>
+                <li class="ingredient" data-quantity="3" data-unit="cardamom pod" data-unit-plural="cardamom pods"><span class="ingredient__amount">3 cardamom pods</span> <span class="ingredient__name">lightly crushed</span></li>
+                <li class="ingredient" data-quantity="2.5" data-unit="cup" data-unit-plural="cups"><span class="ingredient__amount">2½ cups</span> <span class="ingredient__name">water</span></li>
+                <li class="ingredient" data-quantity="2" data-unit="unsliced white loaf" data-unit-plural="unsliced white loaves"><span class="ingredient__amount">2 unsliced white loaves</span> <span class="ingredient__name">each cut in half across the middle</span></li>
+                <li class="ingredient"><span class="ingredient__amount">To taste</span> <span class="ingredient__name">salt</span></li>
+                <li class="ingredient"><span class="ingredient__amount">To serve</span> <span class="ingredient__name">fresh cilantro and grated carrot sambal</span></li>
+              </ul>
+            </section>
+
+            <div class="recipe-card__panels">
+              <details class="recipe-panel" open>
+                <summary>Cooking instructions</summary>
+                <div class="recipe-panel__body">
+                  <ol class="step-list">
+                    <li>Heat the oil in a large heavy pot over medium heat. Add the cinnamon and cardamom and fry for 30 seconds, then add the onions and cook for 8 to 10 minutes, until golden.</li>
+                    <li>Stir in the garlic and ginger, then the masala, turmeric and cumin. Fry for 1 minute, adding a splash of water if the spices stick.</li>
+                    <li>Add the lamb and brown it on all sides in the spices, for about 5 minutes.</li>
+                    <li>Add the tomatoes, salt and water. Cover and simmer gently for about 1 hour, until the lamb is nearly tender.</li>
+                    <li>Add the potatoes and simmer for 20 to 25 minutes, until soft and the gravy has thickened.</li>
+                    <li>Hollow out each half loaf, leaving a thick wall and base, and keep the scooped-out bread to serve on the side.</li>
+                    <li>Spoon the hot curry into the bread, top with cilantro, place the soft bread alongside, and serve with sambal. Remove the cinnamon stick as you serve.</li>
+                  </ol>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Video tutorial</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/bOhddTWSJPQ" title="The Right Way to Make Authentic Durban Curry (Bunny Chow), by Pants Down Aprons On" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <p class="embed-note">Video by Pants Down Aprons On. Its method may differ from the recipe above. <a href="https://www.youtube.com/watch?v=bOhddTWSJPQ" target="_blank" rel="noopener noreferrer">Open on YouTube<span class="sr-only">: The Right Way to Make Authentic Durban Curry (Bunny Chow)</span></a></p>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Nutrition facts (approximate)</summary>
+                <div class="recipe-panel__body">
+                  <table class="nutrition-table">
+                    <caption>Approximate values per serving, estimated from typical values for the listed ingredients. They are not laboratory measurements.</caption>
+                    <thead>
+                      <tr><th scope="col">Nutrient</th><th scope="col">Per serving (approx.)</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">Energy</th><td>~850 kcal</td></tr>
+                      <tr><th scope="row">Protein</th><td>~42 g</td></tr>
+                      <tr><th scope="row">Carbohydrates</th><td>~95 g</td></tr>
+                      <tr><th scope="row">Fat</th><td>~33 g</td></tr>
+                      <tr><th scope="row">Fiber</th><td>~8 g</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details class="recipe-panel">
+                <summary>Where it comes from</summary>
+                <div class="recipe-panel__body">
+                  <div class="embed">
+                    <iframe src="https://www.google.com/maps?q=Durban%2C%20South%20Africa&amp;z=5&amp;output=embed" title="Map showing South Africa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <p class="embed-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Durban%2C%20South%20Africa" target="_blank" rel="noopener noreferrer">Open South Africa in Google Maps</a></p>
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+
+        <!-- Shown by the JavaScript when My Favorites has no recipes -->
+        <div class="empty-state hidden" id="favorites-empty">
+          <p class="empty-state__icon" aria-hidden="true">♡</p>
+          <h2>No favorites yet</h2>
+          <p>Tap the Favorite button on any recipe and it will be saved here, ready for your next visit.</p>
+          <button class="btn btn--primary" id="show-all-recipes" type="button">Browse All Recipes</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site footer: the same on every page -->
+  <div class="pattern-band" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__about">
+        <a class="brand" href="index.html" aria-label="Taste of Africa home">
+          <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="15" r="9" fill="#BB8130"/><path d="M4 20h32a16 16 0 0 1-32 0Z" fill="#7B3311"/><path d="M4 20h32" stroke="#162A22" stroke-width="2"/></svg>
+          <span>Taste of Africa</span>
+        </a>
+        <p>Celebrating, preserving and sharing Africa's rich culinary heritage through traditional recipes, cultural storytelling and regional food discoveries.</p>
+      </div>
+
+      <nav aria-label="Quick links">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stories.html">Food Stories</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#photo-credits">Photo Credits</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Recipes">
+        <h2>Recipes</h2>
+        <ul>
+          <li><a href="recipes.html">All Recipes</a></li>
+          <li><a href="recipes.html#jollof-rice">Jollof Rice</a></li>
+          <li><a href="recipes.html#isombe">Isombe</a></li>
+          <li><a href="recipes.html#chicken-tagine">Chicken Tagine</a></li>
+          <li><a href="recipes.html#injera">Injera</a></li>
+          <li><a href="recipes.html#bunny-chow">Bunny Chow</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Culinary regions">
+        <h2>Regions</h2>
+        <ul>
+          <li><a href="regions.html">All Regions</a></li>
+          <li><a href="regions.html#west-africa">West Africa</a></li>
+          <li><a href="regions.html#east-africa">East Africa</a></li>
+          <li><a href="regions.html#north-africa">North Africa</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Social media">
+        <h2>Follow</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container site-footer__bottom">
+      <p>&copy; 2026 Taste of Africa. A university frontend development project.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+</body>
+</html>
