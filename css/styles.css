@@ -1,30 +1,4 @@
-/* ==========================================================================
-   TASTE OF AFRICA - MAIN STYLESHEET
-   One stylesheet shared by every page.
 
-   Contents
-   1.  Design tokens (brand colors, theme colors, type, spacing)
-   2.  Reset and base elements
-   3.  Layout helpers and accessibility utilities
-   4.  Buttons, links and shared components
-   5.  Site header and navigation
-   6.  Site footer
-   7.  Home page
-   8.  Inner-page heroes
-   9.  Recipes page
-   10. Regions page
-   11. About page
-   12. Stories page
-   13. Contact page and forms
-   14. Scroll animations
-   15. Responsive breakpoints
-   ========================================================================== */
-
-/* ==========================================================================
-   1. DESIGN TOKENS
-   The brand palette never changes. The "theme" variables below it point at
-   palette colors, so switching theme only means reassigning those variables.
-   ========================================================================== */
 :root {
   /* Official brand palette */
   --dark-cocoa: #40150a;
@@ -62,8 +36,8 @@
   --shadow-lift: 0 18px 44px rgba(64, 21, 10, 0.18);
 
   /* Typography */
-  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Agu Display", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 
   /* Spacing and shape */
   --space-xs: 0.5rem;
