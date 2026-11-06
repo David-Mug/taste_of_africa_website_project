@@ -105,7 +105,7 @@ An internet connection is needed for fonts, videos and maps.
 
 ## Content and credits
 
-- Photographs come from [Wikimedia Commons](https://commons.wikimedia.org/) under Creative Commons licenses. Each one is credited in the Photo Credits section of `about.html`.
+- Pictures come from [Wikimedia Commons](https://commons.wikimedia.org/) under Creative Commons licenses. 
 - Videos belong to their creators and are embedded from YouTube.
 - Nutritional values are approximate estimates based on the listed ingredients. They are not laboratory measurements.
 - Forms have no backend, so no data is sent or stored. The contact email address and social media links are placeholders.
